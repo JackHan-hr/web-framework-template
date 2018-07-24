@@ -6537,8 +6537,8 @@ rc-switch@~1.6.0:
     prop-types "^15.5.6"
 
 rc-table@~6.2.2:
-  version "6.2.6"
-  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-6.2.6.tgz#2481d4eae6876dc4987df0614aa35be038e09a76"
+  version "6.2.7"
+  resolved "https://registry.yarnpkg.com/rc-table/-/rc-table-6.2.7.tgz#001d117bdaf166a6c1de704d0e9462e9e801393b"
   dependencies:
     babel-runtime "6.x"
     classnames "^2.2.5"
