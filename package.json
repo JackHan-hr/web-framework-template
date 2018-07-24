@@ -2,10 +2,30 @@
   "name": "loyo-kuaiqi-qywx-web",
   "version": "0.1.0",
   "private": true,
+  "description": "一款企业微信前端应用",
+  "main": "index.js",
+  "repository": "git@github.com:JackHan-hr/qywx-web.git",
+  "author": "JackHan",
+  "license": "MIT",
   "dependencies": {
+    "antd": "^3.7.1",
+    "prop-types": "^15.6.2",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-scripts": "1.1.4"
+  },
+  "devDependencies": {
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-import": "^1.8.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "dva": "^2.3.1",
+    "dva-loading": "^2.0.3",
+    "less": "^3.8.0",
+    "less-loader": "^4.1.0",
+    "prettier": "^1.13.7",
+    "rollbar": "^2.4.2"
   },
   "scripts": {
     "start": "react-scripts start",
