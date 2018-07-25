@@ -4,7 +4,7 @@ class Com extends Component {
   render() {
     return (
       <div className="Com">
-        111
+        Resolve Component
       </div>
     );
   }
