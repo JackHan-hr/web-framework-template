@@ -64,13 +64,14 @@
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-react": "^7.0.1",
-    "stylelint": "^9.2.1",
-    "stylelint-config-prettier": "^3.0.4",
-    "stylelint-config-standard": "^18.0.0",
     "less": "^3.8.0",
     "less-loader": "^4.1.0",
+    "path": "^0.12.7",
     "prettier": "^1.13.7",
-    "rollbar": "^2.4.2"
+    "rollbar": "^2.4.2",
+    "stylelint": "^9.2.1",
+    "stylelint-config-prettier": "^3.0.4",
+    "stylelint-config-standard": "^18.0.0"
   },
   "scripts": {
     "start": "node scripts/start.js",
