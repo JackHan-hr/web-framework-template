@@ -10,13 +10,14 @@
       "module-resolver", {
         "alias": {
           "components":  "./src/components",
+          "assets": "./src/assets",
         },
       },
     ],
     [
       "import", {
         "libraryName": "antd",
-        "style": true,
+        "style": "css",
       },
     ],
     "add-module-exports",
