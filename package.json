@@ -1,6 +1,6 @@
 {
-  "name": "web",
-  "version": "0.1.0",
+  "name": "web-framework-template",
+  "version": "1.0.0",
   "private": true,
   "description": "一款前端应用框架模板",
   "main": "index.js",
