@@ -10,6 +10,7 @@ class Com extends Component {
         <Button type="primary" className={ComLess.btn}>primary</Button>
         Resolve Component
         <img src={avatar} className={ComLess.avatar} alt="" />
+        <div>{process.env.REACT_APP_ENV}</div>
       </div>
     );
   }
