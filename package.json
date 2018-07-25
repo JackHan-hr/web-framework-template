@@ -1,8 +1,8 @@
 {
-  "name": "loyo-kuaiqi-qywx-web",
+  "name": "web",
   "version": "0.1.0",
   "private": true,
-  "description": "一款企业微信前端应用",
+  "description": "一款前端应用框架模板",
   "main": "index.js",
   "repository": "git@github.com:JackHan-hr/qywx-web.git",
   "author": "JackHan",

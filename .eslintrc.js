@@ -80,11 +80,15 @@ module.exports = {
     "require-yield": [1],
   },
   parserOptions: {
-    ecmaFeatures: {
-      experimentalObjectRestSpread: true,
+    "ecmaVersion": 6,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "experimentalObjectRestSpread": true,
     },
   },
   settings: {
     polyfills: ["fetch", "promises"],
   },
+  "plugins": ["react"],
 };
