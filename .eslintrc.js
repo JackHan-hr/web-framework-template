@@ -19,9 +19,9 @@ module.exports = {
     "prefer-arrow-callback": [0],
     "prefer-destructuring": ["error", {
       "array": false,
-      "object": false
+      "object": false,
     }, {
-      "enforceForRenamedProperties": false
+      "enforceForRenamedProperties": false,
     }],
     "func-names": [0],
     "generator-star-spacing": [0],
