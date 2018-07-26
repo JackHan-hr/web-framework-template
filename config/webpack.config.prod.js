@@ -389,6 +389,8 @@ module.exports = {
       filename: 'static/vendor/common.[chunkhash:8].js',
       minChunks: 2,
     }),
+    // add banner for every chunk file
+    new webpack.BannerPlugin('源码版权归属...'),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.

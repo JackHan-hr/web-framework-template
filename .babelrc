@@ -8,6 +8,7 @@
   "plugins": [
     "transform-decorators-legacy",
     "add-module-exports",
+    "syntax-dynamic-import",
     [
       "module-resolver", {
         "alias": {
