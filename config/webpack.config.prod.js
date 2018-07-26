@@ -382,10 +382,12 @@ module.exports = {
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
 
+    // The three-party library is called twice in the logic code (the number can be customized)
+    // and the public code is extracted.
     new webpack.optimize.CommonsChunkPlugin({
       name: 'vendor',
       filename: 'static/vendor/common.[chunkhash:8].js',
-      minChunks: 2, // 三方库在逻辑代码中被调用两次(数字可以自定义)，将公共的代码提取出来
+      minChunks: 2,
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
