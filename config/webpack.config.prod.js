@@ -56,7 +56,10 @@ module.exports = {
   // You can exclude the *.map files from the build during deployment.
   devtool: shouldUseSourceMap ? 'source-map' : false,
   // In production, we only want to load the polyfills and the app code.
-  entry: [require.resolve('./polyfills'), paths.appIndexJs],
+  entry: {
+    app: [require.resolve('./polyfills'), paths.appIndexJs],
+    vendor: ['@babel/polyfill', 'antd', 'dva', 'dva-loading', 'react', 'react-dom', 'prop-types', 'chalk', 'rollbar', 'setprototypeof'],
+  },
   output: {
     // The build folder.
     path: paths.appBuild,
@@ -64,7 +67,7 @@ module.exports = {
     // There will be one main bundle, and one file per asynchronous chunk.
     // We don't currently advertise code splitting but Webpack supports it.
     filename: 'static/js/[name].[chunkhash:8].js',
-    chunkFilename: 'static/js/[name].[chunkhash:8].chunk.js',
+    chunkFilename: 'static/chunk/[name].[chunkhash:8].chunk.js',
     // We inferred the "public path" (such as / or /my-project) from homepage.
     publicPath: publicPath,
     // Point sourcemap entries to original disk location (format as URL on Windows)
@@ -378,6 +381,12 @@ module.exports = {
     // https://github.com/jmblog/how-to-optimize-momentjs-with-webpack
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
+
+    new webpack.optimize.CommonsChunkPlugin({
+      name: 'vendor',
+      filename: 'static/vendor/common.[chunkhash:8].js',
+      minChunks: 2, // 三方库在逻辑代码中被调用两次(数字可以自定义)，将公共的代码提取出来
+    }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
   // Tell Webpack to provide empty mocks for them so importing them works.
