@@ -5,6 +5,8 @@ import dynamic from 'dva/dynamic';
 import { LocaleProvider, Spin } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
 
+import router from './common/router';
+
 import App from './containers/App';
 import NotFound from './routes/NotFound/NotFound';
 
@@ -15,7 +17,7 @@ dynamic.setDefaultLoadingComponent(() => {
 });
 
 const Routers = ({ history, app }) => {
-  const routes = [];
+  const routes = router.routes;
 
   const Notfound = dynamic({
     app,
@@ -27,7 +29,7 @@ const Routers = ({ history, app }) => {
       <ConnectedRouter history={history}>
         <App>
           <Switch>
-            <Route exact path="/" render={() => (<Redirect to="" />)} />
+            <Route exact path="/" render={() => (<Redirect to="/" />)} />
             {
               routes.map(({ path, ...dynamics }, key) => (
                 <Route
@@ -52,6 +54,11 @@ const Routers = ({ history, app }) => {
 Routers.propTypes = {
   history: PropTypes.object,
   app: PropTypes.object,
+}
+
+Routers.defaultProps = {
+  history: 'history',
+  app: 'app',
 }
 
 export default Routers;
