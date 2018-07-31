@@ -2,14 +2,14 @@ import './polyfill';
 import dva from 'dva';
 
 import createLoading from 'dva-loading';
+import { createLogger } from 'redux-logger';
 import createHistory from 'history/createBrowserHistory';
 import 'moment/locale/zh-cn';
 import { message } from 'antd';
 import './rollbar';
-
-import models from './models';
 import router from './router';
 
+import 'loaders.css/loaders.css';
 import './index.less';
 import './theme/skin.less';
 
@@ -18,12 +18,15 @@ const app = dva({
   onError(error) {
     message.error(error.message);
   },
+  onAction: createLogger(),
 });
 
 app.use(createLoading());
 
-models.forEach(m => app.model(m));
+app.model(require('./models/global').default);
 
 app.router(router);
 
 app.start('#root');
+
+export default app._store; // eslint-disable-line

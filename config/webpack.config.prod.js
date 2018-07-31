@@ -58,7 +58,7 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: {
     app: [require.resolve('./polyfills'), paths.appIndexJs],
-    vendor: ['@babel/polyfill', 'antd', 'dva', 'dva-loading', 'react', 'react-dom', 'prop-types', 'chalk', 'rollbar', 'setprototypeof'],
+    vendor: ['@babel/polyfill', 'antd', 'dva', 'dva-loading', 'react', 'react-dom', 'prop-types', 'chalk', 'rollbar', 'setprototypeof', 'qs'],
   },
   output: {
     // The build folder.

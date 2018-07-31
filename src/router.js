@@ -2,50 +2,38 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { routerRedux, Switch, Route, Redirect } from 'dva/router';
 import dynamic from 'dva/dynamic';
-import { LocaleProvider, Spin } from 'antd';
+import { LocaleProvider } from 'antd';
 import zhCN from 'antd/lib/locale-provider/zh_CN';
-
-import router from './common/router';
-
-import App from './containers/App';
-import NotFound from './routes/NotFound/NotFound';
 
 const { ConnectedRouter } = routerRedux;
 
-dynamic.setDefaultLoadingComponent(() => {
-  return <Spin size="large" className="globalSpin" />;
-});
-
 const Routers = ({ history, app }) => {
-  const routes = router.routes;
-
-  const Notfound = dynamic({
+  window.app = app;
+  const LoginLayout = dynamic({
     app,
-    component: () => NotFound,
+    models: () => [import('./models/login')],
+    component: () => import('./containers/login/LoginLayout'),
+  });
+
+  const BasicLayout = dynamic({
+    app,
+    component: () => import('./containers/basic/BasicLayout'),
+  });
+
+  const NotFound = dynamic({
+    app,
+    component: () => import('./routes/NotFound/NotFound'),
   });
 
   return (
     <LocaleProvider locale={zhCN}>
       <ConnectedRouter history={history}>
-        <App>
-          <Switch>
-            <Route exact path="/" render={() => (<Redirect to="/" />)} />
-            {
-              routes.map(({ path, ...dynamics }, key) => (
-                <Route
-                  key={key}
-                  exact
-                  path={path}
-                  component={dynamic({
-                    app,
-                    ...dynamics,
-                  })}
-                />
-              ))
-            }
-            <Route component={Notfound} />
-          </Switch>
-        </App>
+        <Switch>
+          <Route exact path='/' render={() => <Redirect to='/login' />} />
+          <Route exact path='/login' component={LoginLayout} />
+          <Route path='/dashboard' component={BasicLayout} />
+          <Route component={NotFound} />
+        </Switch>
       </ConnectedRouter>
     </LocaleProvider>
   )

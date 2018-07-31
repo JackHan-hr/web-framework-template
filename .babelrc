@@ -3,11 +3,10 @@
     "react-app",
     "es2015",
     "react",
-    "stage-0"
+    "stage-0",
   ],
   "plugins": [
     "transform-decorators-legacy",
-    "add-module-exports",
     "syntax-dynamic-import",
     [
       "module-resolver", {
@@ -15,6 +14,7 @@
           "components":  "./src/components",
           "assets": "./src/assets",
           "utils": "./src/utils",
+          "~": "./node_modules",
         },
       },
     ],

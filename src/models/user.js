@@ -1,5 +1,5 @@
 export default {
-  namespace: 'global',
+  namespace: 'user',
 
   state: {},
 
