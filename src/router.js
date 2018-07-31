@@ -12,12 +12,12 @@ const Routers = ({ history, app }) => {
   const LoginLayout = dynamic({
     app,
     models: () => [import('./models/login')],
-    component: () => import('./containers/login/LoginLayout'),
+    component: () => import('./containers/LoginLayout/LoginLayout'),
   });
 
   const BasicLayout = dynamic({
     app,
-    component: () => import('./containers/basic/BasicLayout'),
+    component: () => import('./containers/BasicLayout/BasicLayout'),
   });
 
   const NotFound = dynamic({

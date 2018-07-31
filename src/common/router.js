@@ -23,20 +23,26 @@ const dynamicWrapper = (app, models, component) => {
   return Route;
 };
 
+// 路由配置
 const RouteData = app => {
 
   const routes = [
     {
-      path: '/dashboard',
+      path: '',
       exact: true,
-      component: dynamicWrapper(app, ['user'], () => import('../routes/Dashboard/Dashboard')),
+      component: dynamicWrapper(app, [], () => import('../routes/Dashboard/Dashboard')),
     },
     {
-      path: '/dashboard/user',
+      path: '/user',
       exact: true,
       component: dynamicWrapper(app, ['user'], () => import('../routes/Dashboard/User')),
     },
   ];
+
+  const basePath = '/dashboard';
+  routes.forEach((route) => {
+    route.path = basePath + route.path;
+  });
 
   const NotFound = dynamic({
     app,
