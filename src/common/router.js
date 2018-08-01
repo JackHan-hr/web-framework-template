@@ -23,7 +23,7 @@ const dynamicWrapper = (app, models, component) => {
   return Route;
 };
 
-// 路由配置
+// 组件路由配置
 const RouteData = app => {
 
   const routes = [
