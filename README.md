@@ -65,22 +65,22 @@ facebook开源的一个基本配置框架，正因为它简洁，又不需要我
 #### 目录结构
 
 ```bash
-├── /build/           # 打包输出
-├── /config/          # create-react-app + 自定义配置
+├── /build/         # 打包输出
+├── /config/        # create-react-app + 自定义配置
 │ ├── /webpack.config.dev.js/   # 开发配置
 │ ├── /webpack.config.prod.js/  # 生产配置 staging配置
-├── /public/         # 公共文件
-├── /scripts/        # create-react-app + 环境变量 脚本
-├── /src/            # 项目源码
-│ ├── /assets/      # 资源文件
-│ ├── /common/      # 公共文件
-│ ├── /components/  # 示例组件
-│ ├── /containers/  # layout 组件
-│ ├── /models/      # dva 数据模型
-│ ├── /theme/       # 皮肤样式
-│ ├── /utils/       # 工具函数
-│ │ └── index.js   # 项目工具配置
-│ ├── router.js      # 路由配置
+├── /public/        # 公共文件
+├── /scripts/       # create-react-app + 环境变量 脚本
+├── /src/           # 项目源码
+│ ├── /assets/       # 资源文件
+│ ├── /common/       # 公共文件
+│ ├── /components/   # 示例组件
+│ ├── /containers/   # layout 组件
+│ ├── /models/       # dva 数据模型
+│ ├── /theme/        # 皮肤样式
+│ ├── /utils/        # 工具函数
+│ │ └── index.js      # 项目工具配置
+│ ├── router.js     # 路由配置
 │ ├── index.js      # 入口文件
 │ ├── polyfill.js   # 函数全局配置
 │ ├── rollbar.js    # 错误追踪
