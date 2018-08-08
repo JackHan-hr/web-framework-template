@@ -28,18 +28,33 @@ const RouteData = app => {
 
   const routes = [
     {
-      path: '',
+      path: '/dashboard',
       exact: true,
-      component: dynamicWrapper(app, [], () => import('../routes/Dashboard/Dashboard')),
+      component: dynamicWrapper(app, [], () => import('../routes/common/Dashboard/Dashboard')),
     },
     {
       path: '/user',
       exact: true,
-      component: dynamicWrapper(app, ['user'], () => import('../routes/Dashboard/User')),
+      component: dynamicWrapper(app, ['user'], () => import('../routes/common/Dashboard/User')),
+    },
+    {
+      path: '/customer/development',
+      exact: true,
+      component: dynamicWrapper(app, [], () => import('../routes/common/Customer/DevCustomer/DevCustomer')),
+    },
+    {
+      path: '/customer/signcontract',
+      exact: true,
+      component: dynamicWrapper(app, [], () => import('../routes/common/Customer/SignCustomer/SignCustomer')),
+    },
+    {
+      path: '/clue/library',
+      exact: true,
+      component: dynamicWrapper(app, [], () => import('../routes/common/Clue/ClueLibrary/ClueLibrary')),
     },
   ];
 
-  const basePath = '/dashboard';
+  const basePath = '/home';
   routes.forEach((route) => {
     route.path = basePath + route.path;
   });

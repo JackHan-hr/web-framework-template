@@ -1,22 +1,22 @@
-const normalMenuData = [
+const commonMenuData = [
   {
     name: '客户管理',
     id: 'customer',
-    icon: 'customer',
+    icon: 'avatar',
     path: 'customer',
     enabled: true,
     children: [
       {
         name: '开发客户',
         id: 'devcustomer',
-        icon: 'dev-customer',
+        icon: 'avatar',
         path: 'development',
         enabled: true,
       },
       {
         name: '签约客户',
         id: 'signcustomer',
-        icon: 'sign-customer',
+        icon: 'avatar',
         path: 'signcontract',
         enabled: true,
       },
@@ -25,28 +25,28 @@ const normalMenuData = [
   {
     name: '线索引擎',
     id: 'clue',
-    icon: 'clue',
+    icon: 'avatar',
     path: 'clue',
     enabled: true,
     children: [
       {
         name: '线索库',
         id: 'cluelibrary',
-        icon: 'clue-library',
+        icon: 'avatar',
         path: 'library',
         enabled: true,
       },
       {
         name: '市场活动',
         id: 'marketactivity',
-        icon: 'marketactivity',
+        icon: 'avatar',
         path: 'marketactivity',
         enabled: true,
       },
       {
         name: '官网推荐',
         id: 'weboffical',
-        icon: 'webofficalrecommend',
+        icon: 'avatar',
         path: 'weboffical',
         enabled: true,
       },
@@ -71,4 +71,4 @@ const normalMenuData = [
   },
 ];
 
-export { normalMenuData };
+export { commonMenuData };

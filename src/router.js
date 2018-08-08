@@ -31,7 +31,8 @@ const Routers = ({ history, app }) => {
         <Switch>
           <Route exact path='/' render={() => <Redirect to='/login' />} />
           <Route exact path='/login' component={LoginLayout} />
-          <Route path='/dashboard' component={BasicLayout} />
+          <Route exact path='/home' render={() => <Redirect to='/home/dashboard' />} />
+          <Route path='/home' component={BasicLayout} />
           <Route component={NotFound} />
         </Switch>
       </ConnectedRouter>

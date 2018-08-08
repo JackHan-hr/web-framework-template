@@ -88,6 +88,9 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      "components":  path.resolve('src/components'),
+      'assets': path.resolve('src/assets'),
+      "utils": path.resolve('src/utils'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -221,7 +224,12 @@ module.exports = {
                   ],
                 },
               },
-              require.resolve('less-loader'),
+              {
+                loader: require.resolve('less-loader'),
+                options: {
+                  javascriptEnabled: true,
+                },
+              },
             ],
           },
           // "file" loader makes sure those assets get served by WebpackDevServer.

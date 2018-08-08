@@ -58,7 +58,25 @@ module.exports = {
   // In production, we only want to load the polyfills and the app code.
   entry: {
     app: [require.resolve('./polyfills'), paths.appIndexJs],
-    vendor: ['@babel/polyfill', 'antd', 'dva', 'dva-loading', 'react', 'react-dom', 'prop-types', 'chalk', 'rollbar', 'setprototypeof', 'qs'],
+    vendor: [
+      '@babel/polyfill',
+      'antd',
+      'dva',
+      'dva-loading',
+      'react',
+      'react-dom',
+      'prop-types',
+      'chalk',
+      'rollbar',
+      'setprototypeof',
+      'qs',
+      'react-document-title',
+      'react-container-query',
+      'classnames',
+      'path-to-regexp',
+      'enquire-js',
+      'rc-drawer',
+    ],
   },
   output: {
     // The build folder.
@@ -97,6 +115,9 @@ module.exports = {
       // Support React Native Web
       // https://www.smashingmagazine.com/2016/08/a-glimpse-into-the-future-with-react-native-for-web/
       'react-native': 'react-native-web',
+      "components":  path.resolve('src/components'),
+      'assets': path.resolve('src/assets'),
+      "utils": path.resolve('src/utils'),
     },
     plugins: [
       // Prevents users from importing files from outside of src/ (or node_modules/).
@@ -257,7 +278,12 @@ module.exports = {
                         ],
                       },
                     },
-                    require.resolve('less-loader'),
+                    {
+                      loader: require.resolve('less-loader'),
+                      options: {
+                        javascriptEnabled: true,
+                      },
+                    },
                   ],
                 },
                 extractTextPluginOptions

@@ -11,7 +11,7 @@ class LoginLayout extends React.Component {
   componentDidMount() {
     let self = this;
     _.delay(() => {
-      self.props.history.push('/dashboard');
+      self.props.history.push('/home/dashboard');
     }, 1000);
   }
 

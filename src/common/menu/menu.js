@@ -1,10 +1,8 @@
 import { isUrl } from 'utils';
-import { normalMenuData } from './normal';
+import { commonMenuData } from './common';
 
-const menuIconPath = 'assets/img/menu/';
-
-function formatter(authority, menuData, parentPath = '/') {
-  const data = menuData || normalMenuData;
+function formatter(authority, menuData, parentPath = '/home/') {
+  const data = menuData || commonMenuData;
 
   // 注入模块权限判断
 
@@ -13,7 +11,6 @@ function formatter(authority, menuData, parentPath = '/') {
     if (!isUrl(path)) {
       path = parentPath + item.path;
     }
-    item.icon = menuIconPath + item.icon;
     const result = {
       ...item,
       path,

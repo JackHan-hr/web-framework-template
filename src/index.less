@@ -4,21 +4,23 @@ body,
   height: 100%;
 }
 
-:global(.ant-layout) {
-  min-height: 100%;
-}
-
 canvas {
   display: block;
 }
 
 body {
+  width: 100% !important;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 :global {
+  .ant-layout {
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
   .ant-spin-container {
     overflow: visible !important;
   }
