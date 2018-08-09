@@ -11,7 +11,7 @@ import SiderMenu from '../../components/SiderMenu';
 import { RouteData } from '../../common/router';
 import { getMenuData } from '../../common/menu/menu';
 
-const { Content, Header, Footer } = Layout;
+const { Content, Header } = Layout;
 
 const query = {
   'screen-xs': {
@@ -110,8 +110,12 @@ class BasicLayout extends React.Component {
           onCollapse={this.handleMenuCollapse}
         />
         <Layout>
-          <Header>111</Header>
-          <Content>
+          <Header
+            style={{ background: '#fff', padding: 0 }}
+          >
+            111
+          </Header>
+          <Content style={{ margin: '24px', background: '#fff', height: '100%'}}>
             <Switch>
               {
                 routes.map(({ path, exact, component }, key) => (
@@ -126,7 +130,6 @@ class BasicLayout extends React.Component {
               <Route component={NotFound} />
             </Switch>
           </Content>
-          <Footer>233</Footer>
         </Layout>
       </Layout>
     );
