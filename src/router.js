@@ -20,6 +20,11 @@ const Routers = ({ history, app }) => {
     component: () => import('./containers/BasicLayout/BasicLayout'),
   });
 
+  const SettingLayout = dynamic({
+    app,
+    component: () => import('./containers/SettingLayout/SettingLayout'),
+  });
+
   const NotFound = dynamic({
     app,
     component: () => import('./routes/NotFound/NotFound'),
@@ -33,6 +38,7 @@ const Routers = ({ history, app }) => {
           <Route exact path='/login' component={LoginLayout} />
           <Route exact path='/home' render={() => <Redirect to='/home/dashboard' />} />
           <Route path='/home' component={BasicLayout} />
+          <Route path='/setting' component={SettingLayout} />
           <Route component={NotFound} />
         </Switch>
       </ConnectedRouter>
