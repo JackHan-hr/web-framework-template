@@ -1,4 +1,5 @@
-import dynamic from 'dva/dynamic';
+import Loadable from 'react-loadable';
+import Loading from 'components/Loading';
 
 const modelNotExisted = (app, model) =>
   // eslint-disable-next-line
@@ -15,12 +16,12 @@ const dynamicWrapper = (app, models, component) => {
     }
   });
 
-  const Route = dynamic({
-    app,
-    component,
+  const LoadableXmap = Loadable({
+    loader: component,
+    loading: Loading,
   });
 
-  return Route;
+  return LoadableXmap;
 };
 
 // 组件路由配置
@@ -59,9 +60,9 @@ const RouteData = app => {
     route.path = basePath + route.path;
   });
 
-  const NotFound = dynamic({
-    app,
-    component: () => import('../routes/NotFound/NotFound'),
+  const NotFound = Loadable({
+    loader: () => import('../routes/NotFound/NotFound'),
+    loading: Loading,
   });
 
   return { routes, NotFound };
